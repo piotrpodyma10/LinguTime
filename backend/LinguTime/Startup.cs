@@ -28,7 +28,6 @@ namespace LinguTime
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            //services.AddSwaggerGen(c => c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
             services.AddSwaggerGen(c => c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
             {
                 Title = "Lingu Time",
@@ -37,13 +36,7 @@ namespace LinguTime
 
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
 
-
             services.AddDbContext<LinguTimeContext>(o => o.UseSqlServer(connectionString));
-
-            //public DbSet<CategoryDto> Category { get; set; }
-            //public DbSet<CustomWordMetadataDto> Posts { get; set; }
-
-        
     }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

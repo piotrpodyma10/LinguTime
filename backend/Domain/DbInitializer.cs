@@ -14,10 +14,6 @@ namespace LinguTime.Domain
         {
             var context = serviceProvider.GetRequiredService<LinguTimeContext>();
             context.Database.Migrate();
-            //context.Database.EnsureCreated();
-
-            //LinguTimeContext context = applicationBuilder.ApplicationServices.GetRequiredService<LinguTimeContext>();
-
 
             if (!context.Users.Any())
             {

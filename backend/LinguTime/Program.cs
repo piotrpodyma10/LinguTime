@@ -25,11 +25,6 @@ namespace LinguTime
                 try
                 {
                     DbInitializer.Seed(services);
-
-                    //var context = services.GetRequiredService<LinguTimeContext>();
-                    //DbInitializer.Seed(context);//<---Do your seeding here
-
-
                 }
                 catch (Exception ex)
                 {
@@ -39,8 +34,6 @@ namespace LinguTime
             }
 
             host.Run();
-
-            //CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

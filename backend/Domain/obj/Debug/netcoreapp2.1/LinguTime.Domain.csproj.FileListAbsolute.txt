@@ -22,3 +22,12 @@ C:\Users\Piotr\source\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime
 C:\Users\Piotr\source\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.csproj.CopyComplete
 C:\Users\Piotr\source\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.dll
 C:\Users\Piotr\source\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.pdb
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.csprojAssemblyReference.cache
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.AssemblyInfoInputs.cache
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.AssemblyInfo.cs
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.dll
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\obj\Debug\netcoreapp2.1\LinguTime.Domain.pdb
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\bin\Debug\netcoreapp2.1\LinguTime.Domain.deps.json
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\bin\Debug\netcoreapp2.1\LinguTime.Domain.dll
+C:\Users\Piotr\source\repos\TestRepoAlways\LinguTime\backend\Domain\bin\Debug\netcoreapp2.1\LinguTime.Domain.pdb

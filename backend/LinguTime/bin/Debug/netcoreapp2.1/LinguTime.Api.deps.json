@@ -25,6 +25,7 @@
       "LinguTime.Api/1.0.0": {
         "dependencies": {
           "LinguTime.Domain": "1.0.0",
+          "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
@@ -275,6 +276,7 @@
       },
       "LinguTime.Domain/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1"
         },

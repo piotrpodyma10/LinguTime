@@ -4395,6 +4395,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.1",
           "Microsoft.EntityFrameWorkCore.SqlServer": "2.1.1"
         },
@@ -11619,6 +11620,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "LinguTime.Domain >= 1.0.0",
+      "Microsoft.AspNetCore >= 2.1.1",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -11632,11 +11634,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Piotr\\source\\LinguTime\\backend\\LinguTime\\LinguTime.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Piotr\\source\\repos\\TestRepoAlways\\LinguTime\\backend\\LinguTime\\LinguTime.Api.csproj",
       "projectName": "LinguTime.Api",
-      "projectPath": "C:\\Users\\Piotr\\source\\LinguTime\\backend\\LinguTime\\LinguTime.Api.csproj",
+      "projectPath": "C:\\Users\\Piotr\\source\\repos\\TestRepoAlways\\LinguTime\\backend\\LinguTime\\LinguTime.Api.csproj",
       "packagesPath": "C:\\Users\\Piotr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Piotr\\source\\LinguTime\\backend\\LinguTime\\obj\\",
+      "outputPath": "C:\\Users\\Piotr\\source\\repos\\TestRepoAlways\\LinguTime\\backend\\LinguTime\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11655,8 +11657,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Piotr\\source\\LinguTime\\backend\\Domain\\LinguTime.Domain.csproj": {
-              "projectPath": "C:\\Users\\Piotr\\source\\LinguTime\\backend\\Domain\\LinguTime.Domain.csproj"
+            "C:\\Users\\Piotr\\source\\repos\\TestRepoAlways\\LinguTime\\backend\\Domain\\LinguTime.Domain.csproj": {
+              "projectPath": "C:\\Users\\Piotr\\source\\repos\\TestRepoAlways\\LinguTime\\backend\\Domain\\LinguTime.Domain.csproj"
             }
           }
         }
@@ -11670,6 +11672,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "Microsoft.AspNetCore": {
+            "target": "Package",
+            "version": "[2.1.1, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
