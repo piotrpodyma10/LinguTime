@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinguTime.Api", "LinguTime\LinguTime.Api.csproj", "{AFA7CA26-6694-4CC8-AE61-8ABEF3CAF8FA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94569868-14BF-42FE-BBD2-9D207E598A3C} = {94569868-14BF-42FE-BBD2-9D207E598A3C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinguTime.Domain", "Domain\LinguTime.Domain.csproj", "{94569868-14BF-42FE-BBD2-9D207E598A3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFA7CA26-6694-4CC8-AE61-8ABEF3CAF8FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA7CA26-6694-4CC8-AE61-8ABEF3CAF8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA7CA26-6694-4CC8-AE61-8ABEF3CAF8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA7CA26-6694-4CC8-AE61-8ABEF3CAF8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94569868-14BF-42FE-BBD2-9D207E598A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94569868-14BF-42FE-BBD2-9D207E598A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94569868-14BF-42FE-BBD2-9D207E598A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94569868-14BF-42FE-BBD2-9D207E598A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2F6BD4E-9819-44A1-B7B9-0AC5CEC44CFC}
+	EndGlobalSection
+EndGlobal
