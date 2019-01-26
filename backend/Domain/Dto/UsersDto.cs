@@ -11,7 +11,5 @@ namespace LinguTime.Domain.Dto
         public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-
-        //public IList<UserPointsDto> UserPoints { get; set; }
     }
 }
