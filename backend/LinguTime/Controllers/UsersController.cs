@@ -7,6 +7,7 @@ using LinguTime.Domain.Dto;
 using LinguTime.Domain.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LinguTime.Controllers
 {
@@ -22,6 +23,7 @@ namespace LinguTime.Controllers
         }
 
         [HttpPost("AddUser")]
+        [Authorize]
         public IActionResult AddUser([FromBody] CreateUserViewModel user)
         {
             if (!ModelState.IsValid)
@@ -36,7 +38,7 @@ namespace LinguTime.Controllers
             _context.SaveChanges();
 
 
-            return Ok();
+            return Ok(user.Id);
         }
     }
 }
