@@ -19,26 +19,22 @@ namespace LinguTime.Domain
             {
                 context.Users.Add(new Dto.UsersDto()
                 {
-                    Login = "adrian.kowalski@gmail.com",
-                    Password = "Test123!"
+                    Id = "1"
                 });
 
                 context.Users.Add(new Dto.UsersDto()
                 {
-                    Login = "artur.sobierski@gmail.com",
-                    Password = "Test123!"
+                    Id = "2"
                 });
 
                 context.Users.Add(new Dto.UsersDto()
                 {
-                    Login = "peter.parker@hotmail.com",
-                    Password = "Test12345!"
+                    Id = "3"
                 });
 
                 context.Users.Add(new Dto.UsersDto()
                 {
-                    Login = "micky.mouse@gmail.com",
-                    Password = "Test12345!"
+                    Id = "4"
                 });
 
                 context.SaveChanges();
@@ -49,19 +45,19 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Work",
-                    UserId = 1
+                    UserId = "1"
                 });
 
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Sport",
-                    UserId = 2
+                    UserId = "2"
                 });
 
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "House",
-                    UserId = 3
+                    UserId = "3"
                 });
 
                 context.SaveChanges();
@@ -72,14 +68,14 @@ namespace LinguTime.Domain
                 context.UserPoints.Add(new Dto.UserPointsDto()
                 {
                    CategoryId = 1,
-                   UserId = 1,
+                   UserId = "1",
                    Score = 70
                 });
 
                 context.UserPoints.Add(new Dto.UserPointsDto()
                 {
                     CategoryId = 2,
-                    UserId = 2,
+                    UserId = "2",
                     Score = 40
                 });
 
@@ -189,7 +185,7 @@ namespace LinguTime.Domain
                 {
                     Name = "Volleyball",
                     Url = "https://i.ytimg.com/vi/h_QyTcPD1G4/maxresdefault.jpg",
-                    UserId = 1,
+                    UserId = "1",
                     CategoryId = 2
                 });
 
