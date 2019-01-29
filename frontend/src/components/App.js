@@ -1,10 +1,9 @@
 import React from 'react'
+import MainSidebar from './MainSidebar'
 
 const App = () => {
     return (
-        <div className="ui container grid">
-            Hello
-        </div>
+        <MainSidebar />
     )
 }
 
