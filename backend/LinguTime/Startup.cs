@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using LinguTime.Domain;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -54,6 +55,7 @@ namespace LinguTime
                         ValidateLifetime = true
                     };
                 });
+            services.AddAutoMapper();
     }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

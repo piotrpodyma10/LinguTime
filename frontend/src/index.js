@@ -1,12 +1,16 @@
-import React from "react"
-import { render } from "react-dom"
-import { Provider } from "react-redux"
-import store from "./store/store"
-import App from "./App.js"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import reducers from './store/reducers'
+import thunk from 'redux-thunk'
+import MainSidebar from './components/MainSidebar'
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
+const store = createStore(reducers, applyMiddleware(thunk))
+
+ReactDOM.render(
+    <Provider store={store}>
+        <MainSidebar />
+    </Provider>,
+    document.querySelector('#root')
 )

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using LinguTime.Domain;
 using LinguTime.Domain.Dto;
 using LinguTime.Domain.ViewModel;
@@ -15,10 +16,12 @@ namespace LinguTime.Controllers
     public class ValuesController : ControllerBase
     {
         private readonly LinguTimeContext _context;
+        private readonly IMapper _mapper;
 
-        public ValuesController(LinguTimeContext context)
+        public ValuesController(LinguTimeContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet("Languages")]
@@ -158,12 +161,8 @@ namespace LinguTime.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.UserPoints.Add(new UserPointsDto
-            {
-                UserId = userPoints.UserId,
-                CategoryId = userPoints.CategoryId,
-                Score = userPoints.Score
-            });
+            var result = _mapper.Map<UserPointsDto>(userPoints);
+            _context.UserPoints.Add(result);
             _context.SaveChanges();
 
             return Ok();
@@ -177,11 +176,8 @@ namespace LinguTime.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Category.Add(new CategoryDto
-            {
-                Name = category.Name,
-                UserId = category.UserId
-            });
+            var result = _mapper.Map<CategoryDto>(category);
+            _context.Category.Add(result);
             _context.SaveChanges();
 
             return Ok();
@@ -195,13 +191,8 @@ namespace LinguTime.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.CustomWordMetadata.Add(new CustomWordMetadataDto
-            {
-                Name = customWordMetadata.Name,
-                Url = customWordMetadata.Url,
-                CategoryId = customWordMetadata.CategoryId,
-                UserId = customWordMetadata.UserId
-            });
+            var result = _mapper.Map<CustomWordMetadataDto>(customWordMetadata);
+            _context.CustomWordMetadata.Add(result);
             _context.SaveChanges();
 
             return Ok();
@@ -215,13 +206,8 @@ namespace LinguTime.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.CustomWords.Add(new CustomWordsDto
-            {
-                Name = customWord.Name,
-                CustomWordsMetadataId = customWord.CustomWordsMetadataId,
-                LanguageId = customWord.LanguageId,
-                CategoryId = customWord.CategoryId
-            });
+            var result = _mapper.Map<CustomWordsDto>(customWord);
+            _context.CustomWords.Add(result);
             _context.SaveChanges();
 
             return Ok();
