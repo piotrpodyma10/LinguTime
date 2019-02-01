@@ -5,7 +5,7 @@ export const allCategories = async () => {
     let result   
     await axios.get(`${BASE_URL}/Categories`)
         .then(categories => {
-            result = categories
+            result = categories.data
         }).catch((e) => {
             console.log(e)
         })

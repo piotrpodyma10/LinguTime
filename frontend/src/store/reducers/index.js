@@ -19,7 +19,9 @@ import {
     fetchAllWordsReducer,
     fetchWordsByCategory
 } from './wordsReducer'
-
+import {
+    fetchAllFlashCardsReducer
+} from './flashCardsReducer'
 
 export default combineReducers({
     categories: fetchAllCategoriesReducer,
@@ -28,8 +30,9 @@ export default combineReducers({
     customWord: fetchCustomWordsByCategory,
     customWordsMetadata: fetchCustomWordsMetadata,
     languages: fetchAllLanguagesReducer,
-    language: fetchLanguageToLearnReducer,
+    languageToLearn: fetchLanguageToLearnReducer,
     userPoints: fetchUserPointsReducer,
     words: fetchAllWordsReducer,
-    wordsByCategory: fetchWordsByCategory
+    wordsByCategory: fetchWordsByCategory,
+    flashCards: fetchAllFlashCardsReducer
 })
