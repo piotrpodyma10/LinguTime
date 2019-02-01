@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css'
 import './mainSidebar.css'
+import SelectMainLanguage from './SelectMainLanguage'
+import SelectToLearnLanguage from './SelectToLearnLanguage'
+import SelectCategory from './SelectCategory'
+import FlashCards from './FlashCards'
 import Chart from './Chart/Chart'
 
 export default class MainSidebar extends Component {
@@ -38,50 +42,53 @@ export default class MainSidebar extends Component {
                             <SideNav.Nav defaultSelected="home">
                                 <NavItem disabled>
                                     <NavIcon>
-                                        <i class="fas fa-globe-americas" style={{ fontSize: '1.75em'}} />
+                                        <i class="fas fa-globe-americas mainIcon" style={{ fontSize: '1.75em'}} />
                                     </NavIcon>
                                     <NavText>
-                                        LinguTime
+                                        <div className="title">LinguTime</div>
                                     </NavText>
                                 </NavItem>
                                 <NavItem eventKey="home" className="sidebarElement">
                                     <NavIcon>
-                                        <i class="fas fa-book" style={{ fontSize: '1.75em' }} />
+                                        <i class="fas fa-book mainIcon" style={{ fontSize: '1.75em' }} />
                                     </NavIcon>
                                     <NavText>
-                                        Global words
+                                        <div className="title">Global words</div>
                                     </NavText>
                                 </NavItem>
                                 <NavItem eventKey="custom" className="sidebarElement">
                                     <NavIcon>
-                                        <i class="fas fa-user-circle" style={{ fontSize: '1.75em' }} />
+                                        <i class="fas fa-user-circle mainIcon" style={{ fontSize: '1.75em' }} />
                                     </NavIcon>
                                     <NavText>
-                                        Custom words
+                                        <div className="title">Custom words</div>
                                     </NavText>
                                 </NavItem>
                                 <NavItem eventKey="statictics" className="sidebarElement">
                                     <NavIcon>
-                                        <i class="fas fa-chart-line" style={{ fontSize: '1.75em' }} />
+                                        <i class="fas fa-chart-line mainIcon" style={{ fontSize: '1.75em' }} />
                                     </NavIcon>
                                     <NavText>
-                                        Check your statistics
+                                        <div className="title">Check your statistics</div>
                                     </NavText>
                                 </NavItem>
                                 <NavItem eventKey="logout" style={{position:'absolute', bottom: '0px', width: 'inherit'}} className="sidebarElement">
                                     <NavIcon>
-                                    <i class="fas fa-sign-out-alt" style={{ fontSize: '1.75em' }} />
+                                    <i class="fas fa-sign-out-alt mainIcon" style={{ fontSize: '1.75em' }} />
                                     </NavIcon>
                                     <NavText>
-                                        Log out
+                                        <div className="title">Log out</div>
                                     </NavText>
                                 </NavItem>
                             </SideNav.Nav>
                         </SideNav>
                         <main>
                             {/* <Route path="/" exact component={} /> */}
-                            {/* <Route path="/home" component={SelectMainLanguage} /> */}
+                            <Route path="/home" component={SelectMainLanguage} />
                             <Route path="/statictics" component={Chart} />
+                            <Route path="/languageToLearn" component={SelectToLearnLanguage} />
+                            <Route path="/category" component={SelectCategory} />
+                            <Route path="/flashCards" component={FlashCards} />
                             {/* <Route path="*" component={NotFound} />  */}
                         </main>
                         </div>
