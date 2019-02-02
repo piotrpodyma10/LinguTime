@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import SignUp from '../components/signUp'
 import { auth } from '../config/firebaseConfig'
-import { addUser } from '../actions/actions'
+import { addMessage, addUser } from '../store/actions/appActions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -13,9 +13,9 @@ const mapDispatchToProps = (dispatch) => {
         createUser: (email, password) => auth.createUserWithEmailAndPassword(email, password)
                                                 .then(result => {
                                                     dispatch(addUser(result.user.uid))
-                                                }),
-        createUserAndRetrieveData: (email, password) => auth.createUserAndRetrieveDataWithEmailAndPassword(email, password)
-                                                .then(result => console.log(result))
+                                                }).catch(error => {
+                                                    dispatch(addMessage('Login failed!', error.message, 'ERROR'))
+                                                })
     }
 }
 

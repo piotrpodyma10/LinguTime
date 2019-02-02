@@ -11,13 +11,29 @@ class SignIn extends Component {
 
     render() {
         return (
-            <div>
-                <input type='text' label='Email' value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} />
-                <input type='password' label='Password' value={this.state.password}  onChange={(e) => this.setState({password: e.target.value})} />
-                <button onClick={() => this.props.signInWithGoogle()} label='Sign in with Google'>Sign in with Google</button>
-                <button onClick={() => this.props.signInWithEmail(this.state.email, this.state.password)} label='Sign In'>Sign In</button>
-                <button onClick={() => this.props.dejToken()} label="loguj sie!"> Dej</button>
-                <button onClick={() => this.props.signOut()} label="Sign Out">Sign Out</button>
+            <div className='ui form'>
+                <div className='field'>
+                    <div className='ui left icon input'>
+                        <i className='user icon'></i>
+                        <input type='text' placeholder='Email' value={this.state.email} onChange={(e) => this.setState({email: e.target.value})} />
+                    </div>
+                </div>
+                
+                <div className='field'>
+                    <div className='ui left icon input'>
+                        <i className='lock icon'></i>
+                        <input type='password' placeholder='Password' value={this.state.password}  onChange={(e) => this.setState({password: e.target.value})} />
+                    </div>
+                </div>
+
+                <button className='ui blue submit button' onClick={() => this.props.signInWithEmail(this.state.email, this.state.password)} label='Sign In'>
+                    Sign In
+                </button>
+                
+                <button className='ui google plus button' onClick={() => this.props.signInWithGoogle()} style={{marginTop: '16px'}}>
+                    <i className='google plus icon'></i>
+                    Sign in with Google
+                </button>
             </div>
         );
     }
