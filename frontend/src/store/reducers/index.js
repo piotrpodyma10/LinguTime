@@ -22,6 +22,7 @@ import {
 import {
     fetchAllFlashCardsReducer
 } from './flashCardsReducer'
+import appReducer from './appReducer'
 
 export default combineReducers({
     categories: fetchAllCategoriesReducer,
@@ -34,5 +35,6 @@ export default combineReducers({
     userPoints: fetchUserPointsReducer,
     words: fetchAllWordsReducer,
     wordsByCategory: fetchWordsByCategory,
-    flashCards: fetchAllFlashCardsReducer
+    flashCards: fetchAllFlashCardsReducer,
+    app: appReducer
 })

@@ -1,9 +1,13 @@
 import React from 'react'
 import MainSidebar from './MainSidebar'
+import Messages from './Messages';
 
 const App = () => {
     return (
-        <MainSidebar />
+        <div style={{height: '100%'}}>
+            <Messages />
+            <MainSidebar />
+        </div>
     )
 }
 

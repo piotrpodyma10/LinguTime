@@ -19,26 +19,22 @@ namespace LinguTime.Domain
             {
                 context.Users.Add(new Dto.UsersDto()
                 {
-                    Login = "adrian.kowalski@gmail.com",
-                    Password = "Test123!"
+                    Id = "uGauna8O8YNvXJB0sGJpmZrlmQJ2"
                 });
 
                 context.Users.Add(new Dto.UsersDto()
                 {
-                    Login = "artur.sobierski@gmail.com",
-                    Password = "Test123!"
+                    Id = "jocI7gQxBKeXiiQZXKvb7lZWd9p2"
                 });
 
                 context.Users.Add(new Dto.UsersDto()
                 {
-                    Login = "peter.parker@hotmail.com",
-                    Password = "Test12345!"
+                    Id = "y5wv2X0MA7gdTYnvxDrpwLislMl2"
                 });
 
                 context.Users.Add(new Dto.UsersDto()
                 {
-                    Login = "micky.mouse@gmail.com",
-                    Password = "Test12345!"
+                    Id = "VIiowdLCSAMsEF5oJ2rmGvifoAj2"
                 });
 
                 context.SaveChanges();
@@ -49,7 +45,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Work",
-                    UserId = 1,
+                    UserId = "uGauna8O8YNvXJB0sGJpmZrlmQJ2",
                     Img = "https://c1.staticflickr.com/5/4222/34127848854_7e644fbe4e_b.jpg"
                 });
 
@@ -58,7 +54,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Sport",
-                    UserId = 2,
+                    UserId = "jocI7gQxBKeXiiQZXKvb7lZWd9p2",
                     Img = "http://www.4usky.com/data/out/35/164299054-football-wallpapers.jpg"
                 });
 
@@ -67,7 +63,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "House",
-                    UserId = 3,
+                    UserId = "y5wv2X0MA7gdTYnvxDrpwLislMl2",
                     Img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUdap0MzFOCZ-b2AzEGQ5ew0Z9rRl7lKXWDf3g2ZDl8yidCQmZ"
                 });
 
@@ -76,7 +72,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Food",
-                    UserId = 3,
+                    UserId = "y5wv2X0MA7gdTYnvxDrpwLislMl2",
                     Img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmOY5RgohhF86sPk0zsR8rqLfNRJtIpDsfAOvkZh58f7uPKbsWGA"
                 });
 
@@ -85,7 +81,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Days",
-                    UserId = 3,
+                    UserId = "y5wv2X0MA7gdTYnvxDrpwLislMl2",
                     Img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQKccmGRquN-HzcrKWGCnrWQOrNNnnuLhebvrEOf1gqzxRfnDSrg"
                 });
 
@@ -94,7 +90,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Months",
-                    UserId = 3,
+                    UserId = "y5wv2X0MA7gdTYnvxDrpwLislMl2",
                     Img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLSekW7v0BsiTAhvxLJXJSRFCU6dEhNPi9x08H3xJcTylq9mIo"
                 });
 
@@ -103,7 +99,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Animals",
-                    UserId = 2,
+                    UserId = "jocI7gQxBKeXiiQZXKvb7lZWd9p2",
                     Img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ0eq9EXh9C6SORUi6mrJ6G3x9U9WSbiWdjIJWodYhqAD-eFF1"
                 });
 
@@ -112,7 +108,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Countries",
-                    UserId = 2,
+                    UserId = "jocI7gQxBKeXiiQZXKvb7lZWd9p2",
                     Img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFrFixwXAqC6ZG-ttKEuB14Cud9nVyOZKVsLO-8IdJPtreWYGJ"
                 });
 
@@ -121,7 +117,7 @@ namespace LinguTime.Domain
                 context.Category.Add(new Dto.CategoryDto()
                 {
                     Name = "Colors",
-                    UserId = 2,
+                    UserId = "jocI7gQxBKeXiiQZXKvb7lZWd9p2",
                     Img = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeViP6xyXQWjf1pXai2M13y4E0zwXXdjnJ6j86dDdvmf_qeRJ3"
                 });
 
@@ -133,35 +129,35 @@ namespace LinguTime.Domain
                 context.UserPoints.Add(new Dto.UserPointsDto()
                 {
                    CategoryId = 1,
-                   UserId = 1,
+                   UserId = "uGauna8O8YNvXJB0sGJpmZrlmQJ2",
                    Score = 70
                 });
 
                 context.UserPoints.Add(new Dto.UserPointsDto()
                 {
                     CategoryId = 2,
-                    UserId = 2,
+                    UserId = "jocI7gQxBKeXiiQZXKvb7lZWd9p2",
                     Score = 40
                 });
 
                 context.UserPoints.Add(new Dto.UserPointsDto()
                 {
                     CategoryId = 2,
-                    UserId = 1,
+                    UserId = "uGauna8O8YNvXJB0sGJpmZrlmQJ2",
                     Score = 35
                 });
 
                 context.UserPoints.Add(new Dto.UserPointsDto()
                 {
                     CategoryId = 3,
-                    UserId = 1,
+                    UserId = "uGauna8O8YNvXJB0sGJpmZrlmQJ2",
                     Score = 82
                 });
 
                 context.UserPoints.Add(new Dto.UserPointsDto()
                 {
                     CategoryId = 4,
-                    UserId = 2,
+                    UserId = "jocI7gQxBKeXiiQZXKvb7lZWd9p2",
                     Score = 75
                 });
 
@@ -2002,7 +1998,7 @@ namespace LinguTime.Domain
                 {
                     Name = "Volleyball",
                     Url = "https://i.ytimg.com/vi/h_QyTcPD1G4/maxresdefault.jpg",
-                    UserId = 1,
+                    UserId = "uGauna8O8YNvXJB0sGJpmZrlmQJ2",
                     CategoryId = 2
                 });
 

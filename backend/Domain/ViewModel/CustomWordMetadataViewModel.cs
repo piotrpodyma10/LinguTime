@@ -9,6 +9,6 @@ namespace LinguTime.Domain.ViewModel
         public string Name { get; set; }
         public string Url { get; set; }
         public int CategoryId { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

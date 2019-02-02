@@ -11,7 +11,7 @@ namespace LinguTime.Domain.Dto
     public class UserPointsDto
     {
         [ForeignKey("User")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public UsersDto User { get; set; }
 
         [ForeignKey("Category")]

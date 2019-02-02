@@ -1,3 +1,5 @@
 
-backend/.vscode/tasks.json
 backend/.vscode/launch.json
+backend/.vscode/tasks.json
+frontend/package-lock.json
+frontend/src/App.js

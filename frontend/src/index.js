@@ -4,13 +4,17 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reducers from './store/reducers'
 import thunk from 'redux-thunk'
-import MainSidebar from './components/MainSidebar'
+import App from './components/App'
 
-const store = createStore(reducers, applyMiddleware(thunk))
+const middlewares = [thunk]
+const { logger } = require('redux-logger')
+middlewares.push(logger)
+
+const store = createStore(reducers, applyMiddleware(...middlewares))
 
 ReactDOM.render(
     <Provider store={store}>
-        <MainSidebar />
+        <App />
     </Provider>,
     document.querySelector('#root')
 )

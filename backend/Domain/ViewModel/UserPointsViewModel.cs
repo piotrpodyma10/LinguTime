@@ -6,7 +6,7 @@ namespace LinguTime.Domain.ViewModel
 {
     public class UserPointsViewModel
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int CategoryId { get; set; }
         public int Score { get; set; }
     }

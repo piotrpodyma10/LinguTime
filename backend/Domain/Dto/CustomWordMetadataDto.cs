@@ -13,6 +13,6 @@ namespace LinguTime.Domain.Dto
         public string Url { get; set; }
         public int CategoryId { get; set; }
         public CategoryDto Category { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

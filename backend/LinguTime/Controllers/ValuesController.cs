@@ -176,7 +176,7 @@ namespace LinguTime.Controllers
         }
 
         [HttpGet("CustomWords-By-Category")]
-        public ActionResult<IEnumerable<CustomWordsDto>> GetCustomWordsByCategory(int userId, int languageId, int categoryId)
+        public ActionResult<IEnumerable<CustomWordsDto>> GetCustomWordsByCategory(string userId, int languageId, int categoryId)
         {
             var response = _context.CustomWords
                 .Include(lang => lang.Language)
@@ -193,7 +193,7 @@ namespace LinguTime.Controllers
         }
 
         [HttpGet("AllCustomWords-By-User")]
-        public ActionResult<IEnumerable<CustomWordsDto>> GetAllCustomWords(int userId)
+        public ActionResult<IEnumerable<CustomWordsDto>> GetAllCustomWords(string userId)
         {
             var response = _context.CustomWords
                 .Include(lang => lang.Language)
@@ -209,7 +209,7 @@ namespace LinguTime.Controllers
         }
 
         [HttpGet("UserPoints-By-UserId")]
-        public ActionResult<IEnumerable<UserPointsDto>> GetUserPointsById(int userId)
+        public ActionResult<IEnumerable<UserPointsDto>> GetUserPointsById(string userId)
         {
             var response = _context.UserPoints.Where(u => u.UserId == userId).Include(cat => cat.Category);
 
@@ -222,7 +222,7 @@ namespace LinguTime.Controllers
         }
 
         [HttpGet("CustomWordMetadata")]
-        public ActionResult<IEnumerable<UserPointsDto>> GetCustomWordMetadata(int userId)
+        public ActionResult<IEnumerable<UserPointsDto>> GetCustomWordMetadata(string userId)
         {
             var response = _context.CustomWordMetadata.Where(u => u.UserId == userId).Include(cat => cat.Category);
 
@@ -291,33 +291,6 @@ namespace LinguTime.Controllers
             var result = _mapper.Map<CustomWordsDto>(customWord);
             _context.CustomWords.Add(result);
             _context.SaveChanges();
-
-            return Ok();
-        }
-
-
-        [HttpPost("Register-User")]
-        public IActionResult Register([FromBody] CreateUserViewModel user)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var result = _mapper.Map<UsersDto>(user);
-            _context.Users.Add(result);
-            _context.SaveChanges();
-
-            return Ok();
-        }
-
-        [HttpPost("Log-In-User")]
-        public IActionResult LogInUser([FromBody] UserViewModel user)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
 
             return Ok();
         }
