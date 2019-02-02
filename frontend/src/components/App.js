@@ -3,7 +3,9 @@ import MainSidebar from './MainSidebar'
 
 const App = () => {
     return (
-        <MainSidebar />
+        <div>
+            <MainSidebar />
+        </div>
     )
 }
 
