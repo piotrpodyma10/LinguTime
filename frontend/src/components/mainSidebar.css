@@ -9,8 +9,141 @@
     background-repeat: no-repeat;
     background-position: center;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    font-family: 'El Messiri', sans-serif;
+    font-size: 56px;
 }
 
 body {
-    background-color:black;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.flag {
+    width: 210px;
+    height: 130px;
+    border:4px solid #ffffff;
+    border-radius: 25px;
+    transition: 1s;
+    background-position:'center';
+    background-size:'cover';
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.languageTitle {
+    color:white;
+    transition:1s;
+}
+
+.flag:hover + .languageTitle {
+    color: #00b7fd;
+    transition: 1s;
+}
+
+.flag:hover {
+    border:4px solid #00b7fd;
+    cursor:pointer;
+    transition: 1s;
+    opacity: 1;
+} 
+
+.countryContainer {
+    width: 240px;
+    height: 200px;
+    font-family: 'El Messiri', sans-serif;
+}
+
+.allCountriesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 70vh;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+}
+
+.mainLanguageTitle {
+    font-size: 40px;
+    letter-spacing:4px;
+    
+}
+
+.mainLanguageContainer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 30vh;
+    align-items: center;
+    font-size: 35px;
+    color:white;
+    /* font-family: 'El Messiri', sans-serif; */
+    font-family: 'Marck Script', cursive;
+}
+
+.title, .mainIcon {
+    color:white !important;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.dragonIcon {
+    margin-left: 10px;
+}
+
+.catIcon {
+    margin-left: 10px;
+}
+
+.towerIcon {
+    margin-right: 10px;
+}
+
+.allCategoriesContainer {
+    display: block;
+    height: 70vh;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categoryContainer {
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    font-family: 'El Messiri', sans-serif;
+    margin-bottom: 50px;
+}
+
+.categoryImg {
+    width: 220px;
+    height: 150px;
+    border: 4px solid #ffffff;
+    border-radius: 25px;
+    transition: 1s;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.categoryImg:hover {
+    border:4px solid #00b7fd;
+    cursor:pointer;
+    transition: 1s;
+    opacity: 1;
+}
+
+.categoryTitle {
+    color:white;
+    transition:1s;
+}
+
+.categoryImg:hover + .categoryTitle {
+    color: #00b7fd;
+    transition:1s ease;
 }

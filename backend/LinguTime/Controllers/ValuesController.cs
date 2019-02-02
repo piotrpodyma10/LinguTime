@@ -76,21 +76,103 @@ namespace LinguTime.Controllers
             return Ok(response);
         }
 
-        [HttpGet("Words-By-Category")]
-        public ActionResult<IEnumerable<CategoryDto>> GetWordsByCategory(int languageId, int categoryId)
+        [HttpGet("Flash-Cards")]
+        public ActionResult<IEnumerable<FlashCardsContainerViewModel>> GetWordsByCategory(int mainLanguageId, int languageToLearnId, int categoryId)
         {
-            var response = _context.Words
-                .Include(lang => lang.Language)
-                .Where(langId => langId.LanguageId == languageId)
-                .Include(wmd => wmd.WordsMetadata)
-                .Where(wmdId => wmdId.WordsMetadata.CategoryId == categoryId);
+            var mainLanguage = from wordMetadata in _context.WordMetadata
+                               join words in _context.Words
+                               on wordMetadata.Id equals words.WordsMetadataId
+                               join category in _context.Category
+                               on wordMetadata.CategoryId equals category.Id
+                               where words.LanguageId == mainLanguageId && wordMetadata.CategoryId == categoryId
+                               select new WordsDto
+                               {
+                                   Name = words.Name,
+                                   WordsMetadataId = words.WordsMetadataId,
+                                   WordsMetadata = new WordMetadataDto
+                                   {
+                                       Category = new CategoryDto
+                                       {
+                                           Name = category.Name
+                                       }
+                                   }
+                               };
 
-            if (response == null)
+            var languageToLearn = from wordMetadata in _context.WordMetadata
+                                  join words in _context.Words
+                                  on wordMetadata.Id equals words.WordsMetadataId
+                                  where words.LanguageId == languageToLearnId && wordMetadata.CategoryId == categoryId
+                                  select new WordsDto
+                                  {
+                                      WordsMetadataId = wordMetadata.Id,
+                                      Name = words.Name,
+                                      WordsMetadata = new WordMetadataDto
+                                      {
+                                          Url = wordMetadata.Url
+                                      }
+                                  };
+
+            var otherWords = from wordMetadata in _context.WordMetadata
+                             join words in _context.Words
+                             on wordMetadata.Id equals words.WordsMetadataId
+                             where words.LanguageId == languageToLearnId
+                             select new WordsDto
+                             {
+                                 WordsMetadataId = wordMetadata.Id,
+                                 Name = words.Name,
+                                 WordsMetadata = new WordMetadataDto
+                                 {
+                                     Url = wordMetadata.Url
+                                 }
+                             };
+
+            List<FlashCardsViewModel> flashCards = new List<FlashCardsViewModel>();
+
+            foreach (var iterator in mainLanguage)
             {
-                return NotFound();
+                var currentLanguageToLearn = languageToLearn.Where(x => x.WordsMetadataId == iterator.WordsMetadataId);
+                List<FlashCardsWordsViewModel> words = new List<FlashCardsWordsViewModel>();
+
+                words.Add(new FlashCardsWordsViewModel()
+                {
+                    wordName = currentLanguageToLearn.Select(x => x.Name).Single(),
+                    img = currentLanguageToLearn.Select(x => x.WordsMetadata.Url).Single(),
+                    correctWord = true,
+                });
+
+                Random rnd = new Random();
+                foreach (var secondIterator in otherWords.Where(x => x.WordsMetadataId != iterator.WordsMetadataId).OrderBy(x => rnd.Next()).Take(5))
+                {
+                    words.Add(new FlashCardsWordsViewModel()
+                    {
+                        wordName = secondIterator.Name,
+                        correctWord = false,
+                        img = secondIterator.WordsMetadata.Url
+                    });
+                };
+
+                int indexPosition = rnd.Next(6);
+                var element = words[0];
+                words.RemoveAt(0);
+                words.Insert(indexPosition, element);
+
+                flashCards.Add(
+                    new FlashCardsViewModel()
+                    {
+                        WordInMainLanguage = iterator.Name,
+                        Words = words,
+                    }
+                );
             }
 
-            return Ok(response);
+            var result = new FlashCardsContainerViewModel
+            {
+                CategoryName = mainLanguage.Select(x => x.WordsMetadata.Category.Name).FirstOrDefault(),
+                NumberOfWords = flashCards.Count(),
+                FlashCards = flashCards
+            };
+
+            return Ok(result);
         }
 
         [HttpGet("CustomWords-By-Category")]
